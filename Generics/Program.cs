@@ -1,4 +1,6 @@
-﻿namespace Generics
+﻿using System;
+
+namespace Generics
 {
     internal partial class Program
     {
@@ -40,7 +42,12 @@
             dictionary.Add("123", new object());
 
 
-            //Example 4:
+            //Example 4 Value Constraint:
+            var number = new Nullable<int>(5);
+            Console.WriteLine("Example 4: Value Constraints");
+            Console.WriteLine("Has Value: " + number.HasValue);
+            Console.WriteLine("Value: " + number.GetValueOrDefault());
+
 
         }
     }
