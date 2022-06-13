@@ -14,7 +14,7 @@ namespace Generics
                 throw new NotImplementedException();
             }
 
-            //indexer that returns the number at the given index
+            //indexer that returns the object at the given index
             public object this[int index]
             {
                 get { throw new NotImplementedException(); }
