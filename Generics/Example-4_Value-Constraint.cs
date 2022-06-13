@@ -2,6 +2,7 @@
 {
     internal partial class Program
     {
+        //Example 4: constraint to value type "struct"
         //value types can't be null
         public class Nullable<T> where T : struct
         {

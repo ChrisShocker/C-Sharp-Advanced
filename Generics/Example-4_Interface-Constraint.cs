@@ -7,8 +7,6 @@ namespace Generics
 
         public class Utilities
         {
-
-          
             //Example 4a:
             //Apply a constraint for typical behavior
             public int Max(int a, int b)
@@ -27,7 +25,7 @@ namespace Generics
 
             /*
              *Note: We can also move the IComparable to class i.e.,
-             *'public class Utilities where T : IComparable'
+             *'public class Utilities<T> where T : IComparable'
              *
              *and the function would no longer need it i.e.,
              *public T Max(T a, T b){
