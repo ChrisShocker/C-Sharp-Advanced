@@ -4,8 +4,6 @@ namespace Generics
 {
     internal partial class Program
     {
-        //Example 4:
-        //somtimes we may need to restrain input types
 
         public class Utilities
         {
