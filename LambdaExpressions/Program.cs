@@ -2,7 +2,7 @@
 
 namespace LambdaExpressions
 {
-    internal class Program
+    internal partial class Program
     {
         /*
          * Lambda expressions create convienence by creating anon functions,
@@ -38,6 +38,23 @@ namespace LambdaExpressions
             Console.WriteLine("Example 4:");
             Console.WriteLine(Add(1, 2, 3) +"\n");
 
+            //Example 5: Advanced Lambda example using objects
+            var books = new BookRepository().GetBooks();
+
+            //typical function to find books
+            Console.WriteLine("Books cheaper then $10");
+            Console.WriteLine("Traditional Method");
+            foreach (var book in books)
+            {
+                if (book.Price < 10)
+                    Console.WriteLine(book.Title);
+            }
+
+            //same function using a lambda expression
+            Console.WriteLine("\nLambda Method");
+            var cheapBooks = books.FindAll(books => books.Price < 10);
+            foreach(var cheapBook in cheapBooks)
+                Console.WriteLine(cheapBook.Title);
         }
     }
 }
