@@ -39,8 +39,16 @@
             //Subscriber
             var mailService = new MailService();
 
+            //instantiate TextService
+            //Another Subscriber
+            var textMessageService = new TextMessageService();
+
+
             //4. Create Subscription using the delegate
             videoEncoder.VideoEncoded += mailService.OnVideoEncoded;
+
+            //4. Create another Subscription using the delegate
+            videoEncoder.VideoEncoded += textMessageService.OnVideoEncoded;
 
             //call encode
             videoEncoder.Encode(video);
