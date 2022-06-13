@@ -13,7 +13,7 @@ namespace LambdaExpressions
         {
             //lambda expressions require a delegate.
 
-            //Example 1: Multiple argument lambda expression
+            //Example 1: Simple argument lambda expression
 
             //we can use Func to delegate, it takes arguments and returns a result
             //Note: first input is argument data type, second is return data type
