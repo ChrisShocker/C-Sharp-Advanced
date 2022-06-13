@@ -4,6 +4,11 @@ namespace LambdaExpressions
 {
     internal class Program
     {
+        /*
+         * Lambda expressions create convienence by creating anon functions,
+         * this can create shorter code by substituting simple functions
+         * https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/lambda-expressions
+         */
         static void Main(string[] args)
         {
             //lambda expressions require a delegate.
