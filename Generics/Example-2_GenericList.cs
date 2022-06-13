@@ -15,7 +15,8 @@ namespace Generics
         {
             public void Add(T value)
             {
-
+                Console.WriteLine("\nExample 2:");
+                Console.WriteLine(value);
             }
             public T this[int index]
             {

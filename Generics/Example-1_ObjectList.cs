@@ -20,7 +20,8 @@ namespace Generics
             //having to box and unbox all value types such as an int.
             public void Add(object value)
             {
-                Console.WriteLine(value);
+
+                Console.WriteLine("Example 1:");
                 objectArray[0] = value;
                 Console.WriteLine("object added");
             }

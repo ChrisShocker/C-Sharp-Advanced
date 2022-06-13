@@ -10,7 +10,8 @@ namespace Generics
         {
             public void Add(TKey key, TValue value)
             {
-                throw new NotImplementedException();
+                Console.WriteLine("\nExample 3:");
+                Console.WriteLine("key: " + key + "value: " + value +"\n");
             }
         }
     }
