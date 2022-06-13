@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Events
+﻿namespace Events
 {
     internal partial class Program
     {
@@ -46,15 +44,6 @@ namespace Events
 
             //call encode
             videoEncoder.Encode(video);
-        }
-
-        //4.Create Event handler
-        public class MailService
-        {
-            public void OnVideoEncoded(object source, EventArgs e)
-            {
-                Console.WriteLine("MailService: Sending an email...");
-            }
         }
     }
 }
