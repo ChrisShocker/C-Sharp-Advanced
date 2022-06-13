@@ -8,7 +8,7 @@ namespace Generics
         public class ObjectList
         {
             //Can add anything as an object but suffers in performance due to 
-            //having to box values such as an int or string.
+            //having to box all value types such as an int.
             public void Add(object value)
             {
                 throw new NotImplementedException();
