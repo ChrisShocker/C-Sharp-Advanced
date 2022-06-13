@@ -22,7 +22,11 @@
          * 
          * 4. Create event handler
          *  - Create Subscription
-         * 
+         *
+         * Note:
+         *  - Since the subscribers are created in seperate classes, 
+         *    the entire project doesn't need to be recompiled on additions (loose coupling)
+         *
          * https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/event
          */
 
