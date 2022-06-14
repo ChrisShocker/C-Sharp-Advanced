@@ -89,15 +89,32 @@ namespace LINQ
              * - Convert an existing item to a new object
              */
             Console.WriteLine("\nExample 4: LINQ Select");
-            Console.WriteLine("Find Books < $5 and convert their title to a new list objects with only the book title");
+            Console.WriteLine("Find Books < $5 and only select their title, ie create list with only book titles");
             var cheapBooksSelect = books
                 .Where(Book => Book.Price < 5)
                 .Select(book => book.Title);
 
-            Console.WriteLine(cheapBooksSelect);
             foreach (var book in cheapBooksSelect)
             {
                 Console.WriteLine(book);
+            }
+            /****************************************************************************/
+
+            /*
+             * Example 4: LINQ Query Operator with chaining 
+             */
+
+            Console.WriteLine("\nExample 5: LINQ Query Operator");
+            Console.WriteLine("Find Books < $5, sort by price, and return all book objects");
+
+            var cheapBooksQueryOp = from book in books
+                                    where book.Price < 5
+                                    orderby book.Price
+                                    select book;
+
+            foreach (var book in cheapBooksQueryOp)
+            {
+                Console.WriteLine(book.Title + "   " + "$" + book.Price);
             }
         }
     }
