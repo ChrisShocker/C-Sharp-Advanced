@@ -90,6 +90,7 @@ namespace LINQ
              */
             Console.WriteLine("\nExample 4: LINQ Select");
             Console.WriteLine("Find Books < $5 and only select their title, ie create list with only book titles");
+
             var cheapBooksSelect = books
                 .Where(Book => Book.Price < 5)
                 .Select(book => book.Title);
@@ -101,7 +102,7 @@ namespace LINQ
             /****************************************************************************/
 
             /*
-             * Example 4: LINQ Query Operator with chaining 
+             * Example 5: LINQ Query Operator with chaining 
              */
 
             Console.WriteLine("\nExample 5: LINQ Query Operator");
