@@ -103,6 +103,7 @@ namespace LINQ
 
             /*
              * Example 5: LINQ Query Operator with chaining 
+             * - The query operator uses the same LINK extension methods, just shorter syntax
              */
 
             Console.WriteLine("\nExample 5: LINQ Query Operator");
@@ -117,6 +118,22 @@ namespace LINQ
             {
                 Console.WriteLine(book.Title + "   " + "$" + book.Price);
             }
+            /****************************************************************************/
+
+
+            /*
+             * Example 6: LINQ Single 
+             * returns only 1 object based on the predicate
+             */
+
+            Console.WriteLine("\nExample 6: LINQ Single");
+            Console.WriteLine("Go through list of books and return specific book with title 'Book 1'");
+
+            var singleBook = books
+                .Single(book => book.Title == "Book 1");
+
+                Console.WriteLine(singleBook.Title + "   " + "$" + singleBook.Price);
+
         }
     }
 
