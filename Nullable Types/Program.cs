@@ -6,6 +6,7 @@ namespace Nullable_Types
      * Nullable Types
      * - C# value type can't be NULL,
      *   but in some cases a value should be NULL ie, secondary phone number
+     *   https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/nullable-value-types
      */
     internal class Program
     {
