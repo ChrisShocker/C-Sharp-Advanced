@@ -124,15 +124,27 @@ namespace LINQ
             /*
              * Example 6: LINQ Single 
              * returns only 1 object based on the predicate
+             * - Crashes if item isn't found
+             * - Use SingleOrDefault()
              */
 
-            Console.WriteLine("\nExample 6: LINQ Single");
+            Console.WriteLine("\nExample 6: LINQ Single with found book");
             Console.WriteLine("Go through list of books and return specific book with title 'Book 1'");
 
             var singleBook = books
-                .Single(book => book.Title == "Book 1");
+                .SingleOrDefault(book => book.Title == "Book 1");
 
-                Console.WriteLine(singleBook.Title + "   " + "$" + singleBook.Price);
+            Console.WriteLine(singleBook.Title + "   " + "$" + singleBook.Price);
+
+            Console.WriteLine("\nExample 6: LINQ Single with unfound book");
+            Console.WriteLine("Go through list of books and return specific book with title 'Book 2389'");
+
+            var unfoundBook = books
+                .SingleOrDefault(book => book.Title == "Book 2398");
+
+            if(unfoundBook != null)
+                Console.WriteLine(unfoundBook.Title + "   " + "$" + unfoundBook.Price);
+            /****************************************************************************/
 
         }
     }
