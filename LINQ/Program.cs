@@ -25,9 +25,11 @@ namespace LINQ
         {
             var books = new BookRepository().GetBooks();
 
+            /****************************************************************************/
+            //Example 1: Create new list with books < $5
             //Without LINQ
             Console.WriteLine("Example 1: Without LINQ");
-            Console.WriteLine("Books under $5:");    
+            Console.WriteLine("Books under $5:");
             var cheapBooks = new List<Book>();
             foreach (var book in books)
             {
@@ -38,15 +40,32 @@ namespace LINQ
                 }
             }
 
+            //Example 1: Create new list with books < $5
             //LINQ
             Console.WriteLine("\nExample 1: With LINQ");
-            Console.WriteLine("Books under $5:");    
+            Console.WriteLine("Books under $5:");
             var cheapBooksLINQ = books.Where(Book => Book.Price < 5);
             //Note: We can use anon functions easily with LINQ extension methods
             foreach (var book in cheapBooksLINQ)
             {
                 Console.WriteLine(book.Title);
             }
+            /****************************************************************************/
+
+            //Example 2: Sort collection 
+            //With LINQ
+            Console.WriteLine("\nExample 2: With LINQ");
+            Console.WriteLine("Order by book price");
+            var sortedBooks = new List<Book>();
+            sortedBooks = books.OrderBy(book => book.Price).ToList();
+            foreach (var book in sortedBooks)
+            {
+                Console.WriteLine(book.Title + "   " +"$" +book.Price);
+            }
+
+
+
+
         }
     }
 
@@ -62,11 +81,11 @@ namespace LINQ
         {
             return new List<Book>
             {
-                new Book() {Title = "Book 1", Price = 2},
-                new Book() {Title = "Book 2", Price = 3},
-                new Book() {Title = "Book 3", Price = 4},
-                new Book() {Title = "Book 4", Price = 5},
-                new Book() {Title = "Book 5", Price = 6},
+                new Book() {Title = "Book 1", Price = 8},
+                new Book() {Title = "Book 2", Price = 4},
+                new Book() {Title = "Book 3", Price = 9},
+                new Book() {Title = "Book 4", Price = 10},
+                new Book() {Title = "Book 5", Price = 1},
             };
         }
     }
