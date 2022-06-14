@@ -62,9 +62,19 @@ namespace LINQ
             {
                 Console.WriteLine(book.Title + "   " +"$" +book.Price);
             }
+            /****************************************************************************/
 
+            //Example 3: LINQ Chaining
+            //With LINQ
+            Console.WriteLine("\nExample 3: LINQ Chaining");
+            Console.WriteLine("Find books < $5 then order by book price");
 
-
+            var cheapBooksChain = books.Where(Book => Book.Price < 5).OrderBy(book => book.Price);
+            foreach (var book in cheapBooksChain)
+            {
+                Console.WriteLine(book.Title + "   " +"$" +book.Price);
+            }
+            /****************************************************************************/
 
         }
     }
