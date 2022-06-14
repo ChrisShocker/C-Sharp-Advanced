@@ -23,7 +23,7 @@ namespace Memory_Management
                 //open unmanaged resource
                 streamReader = new StreamReader("path");
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 Console.WriteLine("An exception is caught");
             }
@@ -38,6 +38,20 @@ namespace Memory_Management
                 if(streamReader != null)
                     streamReader.Dispose();
                 Console.WriteLine("\nResource closed");
+            }
+
+
+            /********************************************************************/
+            Console.WriteLine("\nUsing Example");
+            try
+            {
+                Console.WriteLine("\nUsing automatically disposes of unusmanaged resource");
+                //Using automatically creates a finally block and disposes of the unmanaged resource.
+                using (streamReader = new StreamReader("path"));
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("An exception is caught");
             }
         }
     }
