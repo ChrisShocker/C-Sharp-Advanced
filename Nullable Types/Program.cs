@@ -18,6 +18,7 @@ namespace Nullable_Types
              * - We can use the Nullabe generic
              */
 
+            /************************************************************************************/            
             //Use Nullable generic longhand
             Console.WriteLine("\nNullable Longhand Example:");
             Nullable<int> secondaryPhone = null;
@@ -36,6 +37,7 @@ namespace Nullable_Types
                 Console.WriteLine("secondaryPhone2 is null");
 
             }
+            /************************************************************************************/            
 
             /*
              * Note: 
@@ -49,7 +51,30 @@ namespace Nullable_Types
             Console.WriteLine("\nGetValueOrDefault Example:");
             int newPhone = secondaryPhone2.GetValueOrDefault();
             Console.WriteLine(newPhone);
-            
+            /************************************************************************************/            
+
+            /*
+             * Null Coalescing Operator 
+             * - Short hand for an if else check on a Nullable
+             */
+
+            Console.WriteLine("\nNull WITHOUT Coalescing Operator Example:");
+            int? nonCoalescing = null;
+            int nonCoalescing2;
+
+            if (nonCoalescing.HasValue)
+                nonCoalescing2 = nonCoalescing.GetValueOrDefault();
+            else
+                nonCoalescing2 = 1;
+
+            Console.WriteLine(nonCoalescing2);
+
+
+            Console.WriteLine("\nNull WITH Coalescing Operator Example:");
+            int? coalescing = null;
+            int coalescing2 = coalescing ?? 1;
+            Console.WriteLine(coalescing2);
+            /************************************************************************************/            
         }
     }
 }
