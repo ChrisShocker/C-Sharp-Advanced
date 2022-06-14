@@ -19,6 +19,7 @@ namespace Nullable_Types
              */
 
             //Use Nullable generic longhand
+            Console.WriteLine("\nNullable Longhand Example:");
             Nullable<int> secondaryPhone = null;
 
             secondaryPhone = 1;
@@ -27,6 +28,7 @@ namespace Nullable_Types
                 Console.WriteLine("Secondary Phone number: " +secondaryPhone.Value);
 
             //or shorthand
+            Console.WriteLine("\nNullable Shorthand Example:");
             int? secondaryPhone2 = null;
 
             if (!secondaryPhone2.HasValue)
@@ -43,7 +45,8 @@ namespace Nullable_Types
              * We have to make sure the Nullable has a value to do so,
              * or we can use 'GetValueOrDefault()'
              */
-          
+
+            Console.WriteLine("\nGetValueOrDefault Example:");
             int newPhone = secondaryPhone2.GetValueOrDefault();
             Console.WriteLine(newPhone);
             
