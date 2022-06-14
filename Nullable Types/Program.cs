@@ -35,7 +35,17 @@ namespace Nullable_Types
 
             }
 
-
+            /*
+             * Note: 
+             * we can't directly set a value to a Nullable type,
+             * since the compiler doesn't know if the Nullable will have a value.
+             * 
+             * We have to make sure the Nullable has a value to do so,
+             * or we can use 'GetValueOrDefault()'
+             */
+          
+            int newPhone = secondaryPhone2.GetValueOrDefault();
+            Console.WriteLine(newPhone);
             
         }
     }
