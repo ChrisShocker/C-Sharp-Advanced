@@ -4,6 +4,21 @@ using System.Linq;
 
 namespace LINQ
 {
+
+    /*
+     * LINQ
+     * - Used to query or transform any data that's LINQ enabled
+     * - Always working with objects
+     * - Strongly Typed
+     * - Provides a consistent model for querying different databases ie SQL, XML, .Net etc.
+     * 
+     * 
+     * Intro to LINQ:
+     * https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/introduction-to-linq-queries
+     * Overview of LINQ:
+     * https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/
+     */
+
     internal class Program
     {
         static void Main(string[] args)
@@ -34,7 +49,6 @@ namespace LINQ
             }
         }
     }
-
 
     public class Book
     {
