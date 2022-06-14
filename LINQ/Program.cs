@@ -44,7 +44,10 @@ namespace LINQ
             //LINQ
             Console.WriteLine("\nExample 1: With LINQ");
             Console.WriteLine("Books under $5:");
-            var cheapBooksLINQ = books.Where(Book => Book.Price < 5);
+
+            var cheapBooksLINQ = books
+                .Where(Book => Book.Price < 5);
+
             //Note: We can use anon functions easily with LINQ extension methods
             foreach (var book in cheapBooksLINQ)
             {
@@ -56,7 +59,11 @@ namespace LINQ
             Console.WriteLine("\nExample 2: With LINQ");
             Console.WriteLine("Order by book price");
             var sortedBooks = new List<Book>();
-            sortedBooks = books.OrderBy(book => book.Price).ToList();
+
+            sortedBooks = books
+                .OrderBy(book => book.Price)
+                .ToList();
+
             foreach (var book in sortedBooks)
             {
                 Console.WriteLine(book.Title + "   " + "$" + book.Price);
@@ -67,7 +74,10 @@ namespace LINQ
             Console.WriteLine("\nExample 3: LINQ Chaining");
             Console.WriteLine("Find books < $5 then order by book price");
 
-            var cheapBooksChain = books.Where(Book => Book.Price < 5).OrderBy(book => book.Price);
+            var cheapBooksChain = books
+                .Where(Book => Book.Price < 5)
+                .OrderBy(book => book.Price);
+
             foreach (var book in cheapBooksChain)
             {
                 Console.WriteLine(book.Title + "   " + "$" + book.Price);
@@ -80,7 +90,10 @@ namespace LINQ
              */
             Console.WriteLine("\nExample 4: LINQ Select");
             Console.WriteLine("Find Books < $5 and convert their title to a new list objects with only the book title");
-            var cheapBooksSelect = books.Where(Book => Book.Price < 5).Select(book => book.Title);
+            var cheapBooksSelect = books
+                .Where(Book => Book.Price < 5)
+                .Select(book => book.Title);
+
             Console.WriteLine(cheapBooksSelect);
             foreach (var book in cheapBooksSelect)
             {
