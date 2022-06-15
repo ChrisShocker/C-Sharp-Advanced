@@ -32,7 +32,10 @@ namespace Async
         //Async Version
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
-            await DownloadHTMLAsync("https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/async/");
+            //await DownloadHTMLAsync("https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/async/");
+            var getHtmlTask = GetHtmlAsync("http://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/async/");
+            var html = await getHtmlTask;
+            MessageBox.Show("html Downloaded");
         }
 
         public async Task DownloadHTMLAsync(string url)
@@ -48,8 +51,16 @@ namespace Async
             }
         }
 
+        public async Task<string> GetHtmlAsync(string url)
+        {
+            var webClient = new WebClient();
+
+            return await webClient.DownloadStringTaskAsync(url);
+        }
+
         /**********************************************************************************************/
 
+        /*
         //Sync Version
         private void Button_Clicks(object sender, RoutedEventArgs e)
         {
@@ -66,5 +77,6 @@ namespace Async
                 streamWriter.Write(html);
             }
         }
+        */
     }
 }
