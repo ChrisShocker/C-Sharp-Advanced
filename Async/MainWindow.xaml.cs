@@ -17,9 +17,14 @@ using System.Windows.Shapes;
 
 namespace Async
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+    /*
+     *  Async and Await
+     *  - Allow asynchronous functionality to applications
+     *      - Use await when the rest of the method can't be executed without the awaited item
+     *      
+     * https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/async/
+     */
+
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -32,7 +37,7 @@ namespace Async
         //Async Version
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
-            //await DownloadHTMLAsync("https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/async/");
+            await DownloadHTMLAsync("https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/async/");
             var getHtmlTask = GetHtmlAsync("http://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/async/");
             var html = await getHtmlTask;
             MessageBox.Show("html Downloaded");
